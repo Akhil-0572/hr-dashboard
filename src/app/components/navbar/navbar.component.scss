@@ -1,0 +1,60 @@
+.header {
+  grid-column: 1/-1;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  background: #fff;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.04);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.left {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.menu-btn {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+}
+.title {
+  font-weight: 600;
+}
+.right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.search {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  width: 220px;
+}
+.icon {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.user img {
+  border-radius: 50%;
+}
+.uname {
+  font-size: 14px;
+}
+@media (max-width: 600px) {
+  .search {
+    display: none;
+  }
+}

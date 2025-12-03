@@ -1,0 +1,36 @@
+.sidebar-inner {
+    padding: 18px
+}
+
+.brand {
+    font-weight: 700;
+    color: #1e40af;
+    margin-bottom: 14px;
+    font-size: 16px
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 6px
+}
+
+.nav a {
+    padding: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #111;
+    font-size: 14px
+}
+
+.nav a.active,
+.nav a:hover {
+    background: #f8fafc
+}
+
+.quick {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+}

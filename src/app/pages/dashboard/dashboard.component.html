@@ -1,0 +1,54 @@
+<section class="page-head">
+    <div>
+        <h1>Overview</h1>
+        <div class="muted">Last updated: {{lastUpdated}}</div>
+    </div>
+
+    <div class="actions">
+        <button class="btn ghost" (click)="openAdd()">+ Add candidate</button>
+    </div>
+</section>
+
+<div class="cards">
+    <div class="card stat">
+        <div class="muted">Employees</div>
+        <div class="big">1,248</div>
+        <div class="small green">+3.4% this month</div>
+    </div>
+    <div class="card stat">
+        <div class="muted">Open positions</div>
+        <div class="big">12</div>
+        <div class="small">Hiring in progress</div>
+    </div>
+    <div class="card stat">
+        <div class="muted">Avg performance</div>
+        <div class="big">84%</div>
+        <div class="small">Quality index</div>
+    </div>
+    <div class="card stat">
+        <div class="muted">Attrition</div>
+        <div class="big">5.2%</div>
+        <div class="small">Last 12 months</div>
+    </div>
+</div>
+
+<div class="grid-2">
+    <div>
+        <div class="card">
+            <app-performance-chart></app-performance-chart>
+        </div>
+        <div class="card" style="margin-top:16px">
+            <app-recent-activity></app-recent-activity>
+        </div>
+    </div>
+
+    <div>
+        <div class="card">
+            <h3 style="margin-top:0">Employees</h3>
+            <app-employee-table [showActions]="false"></app-employee-table>
+            <div style="display:flex;justify-content:flex-end;margin-top:8px">
+                <button class="btn ghost" routerLink="/employees">View all</button>
+            </div>
+        </div>
+    </div>
+</div>

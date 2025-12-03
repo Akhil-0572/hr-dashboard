@@ -1,0 +1,15 @@
+<header class="header">
+  <div class="left">
+    <button class="menu-btn" (click)="toggleSidebar()">☰</button>
+    <div class="title">HR Dashboard</div>
+  </div>
+
+  <div class="right">
+    <input #search class="search" placeholder="Search employees..." (input)="onSearch(search.value)" />
+    <button class="icon" title="Notifications">🔔</button>
+    <div class="user">
+      <img src="https://via.placeholder.com/32" alt="avatar" />
+      <div class="uname">Akhil ▾</div>
+    </div>
+  </div>
+</header>

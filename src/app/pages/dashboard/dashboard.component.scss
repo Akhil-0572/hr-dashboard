@@ -1,0 +1,65 @@
+.page-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px
+}
+
+.page-head h1 {
+    margin: 0;
+    font-size: 22px
+}
+
+.muted {
+    color: #6b7280;
+    font-size: 13px
+}
+
+.actions .btn {
+    margin-left: 8px
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 14px
+}
+
+@media(max-width:1100px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media(max-width:600px) {
+    .cards {
+        grid-template-columns: 1fr
+    }
+}
+
+.stat .big {
+    font-size: 20px;
+    font-weight: 700
+}
+
+.stat .small {
+    font-size: 12px;
+    color: #6b7280
+}
+
+.small.green {
+    color: green
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 14px
+}
+
+@media(max-width:900px) {
+    .grid-2 {
+        grid-template-columns: 1fr
+    }
+}

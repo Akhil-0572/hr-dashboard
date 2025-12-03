@@ -1,0 +1,13 @@
+<section class="recent-card">
+  <header class="recent-head">
+    <h4>Recent activity</h4>
+    <button class="small-btn" title="More">⋯</button>
+  </header>
+
+  <ul class="recent-list">
+    <li *ngFor="let i of items">
+      <span class="dot"></span>
+      <span class="text">{{ i }}</span>
+    </li>
+  </ul>
+</section>

@@ -1,0 +1,15 @@
+<div class="sidebar-inner">
+  <div class="brand">Company HR</div>
+  <nav class="nav">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Dashboard</a>
+    <a routerLink="/employees" routerLinkActive="active">Employees</a>
+    <a routerLink="/teams" routerLinkActive="active">Teams</a>
+    <a routerLink="/reports" routerLinkActive="active">Reports</a>
+    <a routerLink="/settings" routerLinkActive="active">Settings</a>
+  </nav>
+
+  <div class="quick">
+    <div class="muted">Quick actions</div>
+    <button class="btn primary" routerLink="/employees">New employee</button>
+  </div>
+</div>

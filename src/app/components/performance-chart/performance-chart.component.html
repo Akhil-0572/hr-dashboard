@@ -1,0 +1,14 @@
+<div class="chart-wrap">
+  <div class="chart-head">
+    <h4>Performance</h4>
+    <div class="info" tabindex="0" title="Monthly average performance">i</div>
+  </div>
+  <div class="chart-canvas">
+    <canvas baseChart
+      [datasets]="lineChartData"
+      [labels]="lineChartLabels"
+      [options]="lineChartOptions"
+      [legend]="true"
+      [chartType]="'line'"></canvas>
+  </div>
+</div>

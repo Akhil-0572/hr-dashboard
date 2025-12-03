@@ -1,0 +1,21 @@
+<div class="modal-backdrop">
+  <div class="modal">
+    <header class="modal-head">
+      <h3>{{ editing ? 'Edit employee' : 'Add candidate' }}</h3>
+      <button class="x" (click)="close()">✕</button>
+    </header>
+
+    <form (ngSubmit)="submit()" class="modal-body">
+      <label><span>Name</span><input [(ngModel)]="model.name" name="candidateName" required /></label>
+      <label><span>Email</span><input [(ngModel)]="model.email" name="candidateEmail" required type="email"/></label>
+      <label><span>Role</span><input [(ngModel)]="model.role" name="candidateRole" /></label>
+      <label><span>Team</span><input [(ngModel)]="model.team" name="candidateTeam" /></label>
+      <label><span>Location</span><input [(ngModel)]="model.location" name="candidateLocation" /></label>
+
+      <footer class="modal-foot">
+        <button type="button" class="btn ghost" (click)="close()">Cancel</button>
+        <button type="submit" class="btn primary">{{ editing ? 'Update' : 'Add candidate' }}</button>
+      </footer>
+    </form>
+  </div>
+</div>
