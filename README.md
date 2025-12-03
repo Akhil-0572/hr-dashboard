@@ -1,27 +1,227 @@
-# HrDashboard
+# HR Management Dashboard  
+A clean, responsive HR Dashboard built in **Angular 12**, demonstrating UI layout design, responsive structure, modular components, and interactive UX typical of real enterprise web applications.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.18.
+---
 
-## Development server
+## 🎯 Objective
+Build a modern HR dashboard including:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Responsive sidebar with collapsible behavior  
+- Top navbar with search, notifications, and user dropdown  
+- Dashboard with stats, performance chart, recent activity, and employee table  
+- Add/Edit employee modal  
+- Clean, consistent UI with spacing, typography, and hover interactions  
+- Strong use of CSS Grid + Flexbox  
+- Smooth UX flow and responsive design across devices  
 
-## Code scaffolding
+Focus is on **layout, structure, and interactivity**, not on matching templates.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## 🛠️ Tech Stack
+- **Angular 12**
+- **TypeScript**
+- **RxJS**
+- **SCSS / CSS Grid / Flexbox**
+- **Vercel Hosting**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## 📌 Features
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### 🔹 Layout & Navigation
+- Fully responsive two-column layout  
+- Collapsible sidebar on mobile  
+- Sticky top navbar  
+- Footer aligned across all screens  
 
-## Running end-to-end tests
+### 🔹 Dashboard
+- Summary statistic cards  
+- Recent activity feed  
+- Performance chart  
+- Employee table preview (read-only on dashboard)  
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 🔹 Employee Management
+- Full table view with:
+  - Sorting (ascending/descending)
+  - Pagination
+  - Click row to open detail view
+- Global search (debounced)
+- Add candidate modal
+- Edit employee modal (same component, prefilled)
+- Delete functionality
+- All operations update instantly using an in-memory service
 
-## Further help
+### 🔹 UI/UX Enhancements
+- Toast notifications (no alerts)
+- Smooth animations & hover states
+- Consistent spacing and professional layout
+- Mobile-friendly structure  
+- Modal system controlled by service
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+---
+
+## 📂 Folder Structure
+
+```
+src/
+│
+├── app/
+│   ├── components/
+│   │   ├── navbar/
+│   │   ├── sidebar/
+│   │   ├── footer/
+│   │   ├── toast/
+│   │   ├── employee-table/
+│   │   └── add-candidate/
+│   │
+│   ├── pages/
+│   │   ├── dashboard/
+│   │   ├── employees/
+│   │   └── employee-detail/
+│   │
+│   ├── services/
+│   │   ├── employee.service.ts
+│   │   └── toast.service.ts
+│   │
+│   ├── models/employee.ts
+│   └── app.module.ts
+│
+├── assets/
+└── styles.css
+```
+
+---
+
+## 🚀 Getting Started
+
+### Install dependencies
+```
+npm install
+```
+
+### Start development server
+```
+ng serve --open
+```
+
+App URL: **http://localhost:4200**
+
+---
+
+## 📦 Build for Production
+```
+ng build --prod
+```
+
+Output will be available in:
+
+```
+dist/<project-name>/
+```
+
+---
+
+## 🌍 Deploy to Vercel
+
+Below is a **ready-to-use Vercel configuration** for Angular projects.
+
+### 1️⃣ Install Vercel CLI
+```
+npm install -g vercel
+```
+
+### 2️⃣ Build the Angular app
+```
+ng build --prod
+```
+
+### 3️⃣ Create a `vercel.json` in the project root
+Copy this:
+
+```json
+{
+  "version": 2,
+  "name": "hr-dashboard",
+  "builds": [
+    {
+      "src": "dist/**/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dist/index.html"
+    }
+  ]
+}
+```
+
+### 4️⃣ Deploy using CLI
+```
+vercel
+```
+
+Then select:
+- "dist/***" folder when asked for the output directory
+- Yes to project settings  
+- And deployment completes
+
+You’ll get a public URL like:
+```
+https://hr-dashboard.vercel.app
+```
+
+---
+
+## 🧪 Feature Demonstration
+
+### 🔍 Search (Debounced)
+- Navbar search triggers filtering after **300ms** of no typing  
+- Uses RxJS `debounceTime` and `distinctUntilChanged`  
+- Filters across name, role, team, email  
+
+### ➕ Add Candidate
+- Opens a global modal  
+- Submit shows toast: *"Added successfully"*  
+- Employee table updates instantly  
+
+### ✏ Edit Candidate
+- Opens same modal pre-filled  
+- Submit shows toast: *"Updated successfully"*  
+- Live update in details & table pages  
+
+### ❌ Delete Candidate
+- Confirmation prompt  
+- Auto-refresh employee table  
+
+### 📊 Sorting & Pagination
+- Click headers to sort  
+- Ascending/descending toggle  
+- Pagination buttons with active page highlight  
+
+### 📱 Responsive Design
+- Sidebar collapses into a slide-in menu  
+- Cards stack on smaller screens  
+- Table scrolls horizontally on mobile  
+
+---
+
+## 🏁 Conclusion
+This HR dashboard demonstrates:
+
+- Clean component architecture  
+- Strong layout design  
+- Interactive UX  
+- Use of RxJS for state & debounce  
+- Modal and toast systems  
+- Sorting, pagination, and filtering  
+- Fully responsive layout  
+- Ready for production deployment  
+
+It is suitable as a professional, presentable front-end assignment for interviews or production-style projects.
+
+---
+
+If you want a README **with screenshots**, a **dark mode version**, or **backend integration**, just tell me.  
