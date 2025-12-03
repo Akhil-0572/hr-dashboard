@@ -54,7 +54,7 @@ body {
     border-bottom: 1px solid rgba(15, 23, 42, 0.04);
     position: sticky;
     top: 0;
-    z-index: 60;
+    z-index: 100;
 }
 
 /* topbar elements */
@@ -207,7 +207,7 @@ body {
 /* grid 2 */
 .grid-2 {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1.3fr;
     gap: 14px;
 }
 
@@ -422,10 +422,50 @@ body {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.3);
-    z-index: 70;
+    z-index: 80;
 }
 
 /* responsive sidebar */
+/* collapsed state for desktop: narrow sidebar */
+.app-shell.collapsed {
+    grid-template-columns: 64px 1fr;
+}
+
+.app-shell.collapsed .sidebar {
+    padding: 10px 6px;
+    overflow: visible;
+}
+
+/* hide brand text, compress nav text when collapsed */
+.app-shell.collapsed .brand {
+    display: none;
+}
+
+.app-shell.collapsed .nav a {
+    padding-left: 8px;
+    font-size: 0;
+}
+
+.app-shell.collapsed .nav a::before {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    content: '';
+    margin-right: 0;
+}
+
+/* placeholder for icons if you add later */
+.app-shell.collapsed .nav a span,
+.app-shell.collapsed .nav a .label {
+    display: none;
+}
+
+/* ensure the main area moves correctly */
+.app-shell.collapsed .main {
+    padding-left: 12px;
+}
+
+/* mobile behavior unchanged */
 @media (max-width:900px) {
     .app-shell {
         grid-template-columns: 1fr;
@@ -448,6 +488,7 @@ body {
         display: block;
     }
 }
+
 
 /* small helpers */
 .muted {

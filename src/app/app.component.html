@@ -1,7 +1,7 @@
-<div class="app-shell">
+<div class="app-shell" [class.collapsed]="(collapsed$ | async)">
   <app-navbar></app-navbar>
 
-  <div class="sidebar" id="appSidebar">
+  <div class="sidebar" id="appSidebar" [class.open]="(open$ | async)">
     <app-sidebar></app-sidebar>
   </div>
 
@@ -11,7 +11,7 @@
 
   <app-footer></app-footer>
 
-  <div class="overlay" id="overlay" (click)="closeSidebar()"></div>
+  <div class="overlay" id="overlay" *ngIf="(open$ | async)" (click)="closeSidebar()"></div>
 
   <app-add-candidate *ngIf="showModal$ | async"></app-add-candidate>
   <app-toast></app-toast>
