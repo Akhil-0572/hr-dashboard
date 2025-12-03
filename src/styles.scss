@@ -41,6 +41,12 @@ body {
     display: block;
     height: var(--header-h);
 }
+.app-shell > app-footer {
+  grid-column: 1 / -1;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
 
 /* header */
 .header {
@@ -425,8 +431,6 @@ body {
     z-index: 80;
 }
 
-/* responsive sidebar */
-/* collapsed state for desktop: narrow sidebar */
 .app-shell.collapsed {
     grid-template-columns: 64px 1fr;
 }
@@ -436,7 +440,6 @@ body {
     overflow: visible;
 }
 
-/* hide brand text, compress nav text when collapsed */
 .app-shell.collapsed .brand {
     display: none;
 }
